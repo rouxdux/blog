@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+        Knowledge base project
+        </title>
+            <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-theme.min.css' %}">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<script>var myheight=document.getElementById('')</script>
+    </head>
+        <body>
+          <header class="fuid-container grey">  
+           <div class="container"> 
+            <div class="page-header">
+               <h1><a href="">Internal documentation</a></h1>
+                <menu class="menus">
+                <ul >   
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                    <li><a href="{% url 'knowledge_base' %}">Knowledge base</a></li>
+                </ul>
+                </menu>
+            </div>
+           </div>
+          </header>  
+              <div class="container">  
+                    <div class="content-container">
+                        <div clas="row">            
+                             <div class="col-md-12">
+                                   <div>
+                                        {% block content %}
+                                        {% endblock %}                     
+                                                                      
+                                   </div>
+                              </div>
+                        </div>
+                    </div>
+              </div>  
+    </body>
+</html>

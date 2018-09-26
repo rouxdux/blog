@@ -15,3 +15,37 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
+class Knowledge_base(models.Model):
+    author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
+
+
+
+class Faq(models.Model):
+    author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)    
+    question = models.TextField(max_length=200)
+    answer = models.TextField(max_length=100)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
+
+    def __str__(self):
+        return self.question

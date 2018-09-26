@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+    {% block content %}
+        {% for faq in faq %}
+            <div clas="row">            
+                <div class="col-md-12 post">
+                    <div class="date">
+                         <p>published: {{ faq.published_date }}</p>
+                                                         
+                                 <h1 class="sub-title"><a href="" >  {{ faq.question }} </a></h1>
+                                   <p>{{ faq.answer|linebreaksbr }}</p>
+                         
+                    </div>
+                </div>
+            </div>
+                             {% endfor %}
+    {% endblock %}
